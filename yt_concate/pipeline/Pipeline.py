@@ -1,5 +1,5 @@
 # from .steps.step import Step, StepException
-from yt_concate.pipeline.steps.step import Step, StepException
+from yt_concate.pipeline.steps.Step import Step, StepException
 
 
 class Pipeline:
@@ -11,6 +11,7 @@ class Pipeline:
         for step in self.steps:
             try:
                 data = step.process(data, inputs)
+                print(data)
             except StepException as e:
                 print("Exception ", e)
                 break
