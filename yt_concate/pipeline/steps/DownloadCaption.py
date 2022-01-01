@@ -27,7 +27,7 @@ class DownloadCaption(Step):
                     except:
                         continue
 
-            print(caption.url)
+            # print(caption.url)
             srt = caption.generate_srt_captions()
             text_file = open(file_path, "w", encoding='utf-8')
             text_file.write(srt)

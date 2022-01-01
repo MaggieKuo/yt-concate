@@ -17,3 +17,4 @@ class StepException(Exception):
 
 class ProcessId(Enum):
     CHANNEL_ID = 'channel_id'
+    SEARCH_KEY = 'search_key'

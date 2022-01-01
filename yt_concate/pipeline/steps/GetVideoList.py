@@ -6,20 +6,6 @@ from yt_concate.pipeline.steps.Step import Step, ProcessId
 from yt_concate.settings import GOOGLE_API_KEY, DOWNLOADS
 
 
-def readVediosList(list_path):
-    f = open(list_path, "r")
-    data = json.loads(f.read())
-    f.close()
-    print(data)
-    return data
-
-
-def saveVideosList(list_path, video_links):
-    f = open(list_path, "w")
-    f.write(json.dumps(video_links))
-    f.close()
-
-
 class GetVideoList(Step):
     def process(self, data, inputs):
         channel_id = inputs[ProcessId.CHANNEL_ID]
@@ -62,3 +48,18 @@ class GetVideoList(Step):
             saveVideosList(list_path, video_links)
 
         return video_links
+
+
+def readVediosList(list_path):
+    f = open(list_path, "r")
+    data = json.loads(f.read())
+    f.close()
+    print(data)
+    return data
+
+
+def saveVideosList(list_path, video_links):
+    f = open(list_path, "w")
+    f.write(json.dumps(video_links))
+    f.close()
+
